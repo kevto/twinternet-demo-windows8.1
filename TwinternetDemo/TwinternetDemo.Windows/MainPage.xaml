@@ -25,7 +25,7 @@
         		<Button Content="Knop" FontSize="25" BorderBrush="#FFF" x:Name="Twinternet" Grid.Row="2" Click="TestEvent_Click"/>
         		<StackPanel Grid.Row="1">
                  
-        			<TextBlock Text="You Know Nothing John Snow." DataContext="{Binding ''}" />
+        			<TextBlock Text="You Know Nothing John Snow." DataContext="{Binding}" />
         			<TextBlock Text="That's how it is."/>
         		</StackPanel>
 
