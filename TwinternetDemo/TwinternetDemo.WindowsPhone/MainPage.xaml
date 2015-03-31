@@ -1,0 +1,60 @@
+﻿<Page
+    x:Class="TwinternetDemo.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:TwinternetDemo"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <DataTemplate x:Key="DemoData">
+            <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                    <ColumnDefinition Width="auto"/>
+                </Grid.ColumnDefinitions>
+
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="auto"/>
+                    <RowDefinition Height="108"/>
+                </Grid.RowDefinitions>
+
+                <Button Content="Knop" FontSize="25" BorderBrush="#FFF" Name="Twinternet" Grid.Row="2"/>
+                <StackPanel Grid.Row="1">
+                    <TextBlock Text="You Know Nothing John Snow."></TextBlock>
+                    <TextBlock Text="That's how it is."/>
+                </StackPanel>
+            </Grid>
+        </DataTemplate>
+    </Page.Resources>
+
+    <Page.BottomAppBar>
+        <AppBar Background="#FF34495E" Foreground="#FF00A0D1" BorderBrush="#FF3B5E80">
+            <Grid>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                <StackPanel Orientation="Horizontal"/>
+                <StackPanel Grid.Column="1" HorizontalAlignment="Right" Orientation="Horizontal"/>
+            </Grid>
+        </AppBar>
+    </Page.BottomAppBar>
+
+
+
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" ScrollViewer.HorizontalScrollMode="Enabled">
+        <Hub Header="Field Guide" Orientation="Vertical">
+            <HubSection Height="300" Header="First" Background="{ThemeResource BackgroundTwinternetColorBlue}" ContentTemplate="{StaticResource DemoData}" />
+
+            <HubSection Height="300" Header="Second" Style="{ThemeResource BlackOnWhiteHubSection}"  ContentTemplate="{StaticResource DemoData}" />
+
+            <HubSection Height="300" Header="Third" ContentTemplate="{StaticResource DemoData}" Background="{ThemeResource BackgroundTwinternetColorDark}"/>
+        </Hub>
+
+    </Grid>
+</Page>
