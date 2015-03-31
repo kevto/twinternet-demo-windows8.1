@@ -71,7 +71,7 @@
                                 <Grid HorizontalAlignment="Left" Width="250" Height="250" Background="Red">
                                     <StackPanel>
                                         <TextBlock Text="{Binding Title}" />
-                                        <TextBlock Text="Kevin Berendsen" />
+                                        <TextBlock Text="Bryan Berendsen" />
                                     </StackPanel>
                                 </Grid>
                             </DataTemplate>
