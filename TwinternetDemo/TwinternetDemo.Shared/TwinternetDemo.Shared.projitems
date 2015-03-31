@@ -27,6 +27,7 @@
     <Compile Include="$(MSBuildThisFileDirectory)RestAPI\Models\Model.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RestAPI\Models\Post.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RestAPI\Models\User.cs" />
+    <Compile Include="$(MSBuildThisFileDirectory)RestAPI\PropertyChanged\PostCollection.cs" />
     <Compile Include="$(MSBuildThisFileDirectory)RestAPI\PropertyChanged\PropPost.cs" />
   </ItemGroup>
 </Project>
