@@ -27,7 +27,7 @@ namespace TwinternetDemo
     /// <summary>
     /// An empty page that can be used on its own or navigated to within a Frame.
     /// </summary>
-    public partial class MainPage : Page
+    public sealed partial class MainPage : Page
     {
         public ObservableCollection<PropPost> CollectionPosts
         {
@@ -38,10 +38,28 @@ namespace TwinternetDemo
         public MainPage()
         {
             CollectionPosts = new ObservableCollection<PropPost>();
-            this.InitializeComponent();    
+            this.InitializeComponent();
+            this.Loaded += MainPage_Loaded;
         }
 
-        private async void TestEvent_Click(object sender, RoutedEventArgs e)
+
+        // Method that executes once the mainpage has been completely loaded successfully.
+        void MainPage_Loaded(object sender, RoutedEventArgs e)
+        {
+            GetPosts();
+        }
+
+
+        // TestEvent click to test the click events of a button.
+        private void TestEvent_Click(object sender, RoutedEventArgs e)
+        {
+            GetPosts();
+        }
+
+
+        // Gets all the posts of a Wordpress website, ours in this case and
+        // places them all in the ObservableCollection
+        async void GetPosts()
         {
             JsonHandler handler = new JsonHandler();
             handler.SetSettings("http://www.twinternet.nl", new WordpressJson());
@@ -60,7 +78,5 @@ namespace TwinternetDemo
                 Debug.WriteLine("MainPage:TestEvent_Click - Count Collection: " + CollectionPosts.Count);
             }
         }
-
-        // Insert new onload method for gridview postsgridview
     }
 }
