@@ -30,14 +30,14 @@ namespace TwinternetDemo
     public sealed partial class MainPage : Page
     {
 
-        public PostCollection postCollectionModelView;
+        public ObservableCollection<PropPost> Items;
 
         public MainPage()
         {
-            postCollectionModelView = new PostCollection();
-            postCollectionModelView.Items = new ObservableCollection<PropPost>();
+            Items = new ObservableCollection<PropPost>();
             this.InitializeComponent();
             this.Loaded += MainPage_Loaded;
+            HubsectionPosts.DataContext = Items;
         }
 
 
@@ -64,16 +64,16 @@ namespace TwinternetDemo
 
             if (await handler.GetRequest<Post>("posts"))
             {
-                if (postCollectionModelView.Items.Count != 0)
-                    postCollectionModelView.Items.Clear();
+                if (Items.Count != 0)
+                    Items.Clear();
 
                 Debug.WriteLine("MainPage:TestEvent_Click - Count Object List: " + handler.GetObjectList().Count);
 
                 foreach (Post post in handler.GetObjectList())
-                    postCollectionModelView.Items.Add(new PropPost(post.Title, post.Author.FirstName + " " + post.Author.LastName));
+                    Items.Add(new PropPost(post.Title, post.Author.FirstName + " " + post.Author.LastName));
 
 
-                Debug.WriteLine("MainPage:TestEvent_Click - Count Collection: " + postCollectionModelView.Items.Count);
+                Debug.WriteLine("MainPage:TestEvent_Click - Count Collection: " + Items.Count);
             }
         }
     }

@@ -25,7 +25,7 @@
         		<Button Content="Knop" FontSize="25" BorderBrush="#FFF" x:Name="Twinternet" Grid.Row="2" Click="TestEvent_Click"/>
         		<StackPanel Grid.Row="1">
                  
-        			<TextBlock Text="You Know Nothing John Snow." DataContext="{Binding}" />
+        			<TextBlock Text="You Know Nothing John Snow." />
         			<TextBlock Text="That's how it is."/>
         		</StackPanel>
 
@@ -55,23 +55,23 @@
 
 			<HubSection Width="800" Header="Second" Style="{ThemeResource BlackOnWhiteHubSection}"  ContentTemplate="{StaticResource DemoData}" />
 
-			<HubSection Width="800" Header="Third" Background="{ThemeResource BackgroundTwinternetColorDark}">
+			<HubSection x:Name="HubsectionPosts" Width="800" Header="Third" Background="{ThemeResource BackgroundTwinternetColorDark}">
 				<DataTemplate>
 					<GridView 
-						Name="postsGridView"
+						x:Name="PostsGridView"
 						HorizontalAlignment="Left" 
 						VerticalAlignment="Top" 
 						MinWidth="500" 
 						Grid.Row="1" 
 						Grid.Column="1"
-                        ItemsSource="{Binding Path=CollectionPosts}">
+                        ItemsSource="{Binding}">
 
                         <GridView.ItemTemplate>
                             <DataTemplate>
                                 <Grid HorizontalAlignment="Left" Width="250" Height="250" Background="Red">
                                     <StackPanel>
                                         <TextBlock Text="{Binding Title}" />
-                                        <TextBlock Text="Bryan Berendsen" />
+                                        <TextBlock Text="{Binding Author}" />
                                     </StackPanel>
                                 </Grid>
                             </DataTemplate>
