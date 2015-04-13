@@ -7,10 +7,14 @@ namespace TwinternetDemo.RestAPI.PropertyChanged
 {
     public class PropPost : INotifyPropertyChanged 
     {
+        // Private binding properties
         private string _author;
         private string _title;
-        private string _dateAndTime;
+        private string _date;
+        private string _modifiedDate;
 
+
+        // Public accessor of Author property and raises a propertychanged notification.
         public string Author
         {
             get
@@ -25,6 +29,8 @@ namespace TwinternetDemo.RestAPI.PropertyChanged
             }
         }
 
+
+        // Public accessor of Title property and raises a propertychanged notification.
         public string Title
         {
             get
@@ -39,29 +45,50 @@ namespace TwinternetDemo.RestAPI.PropertyChanged
             }
         }
 
-        public string DateAndTime
+
+        // Public accessor of Date property and raises a propertychanged notification.
+        public string Date
         {
             get
             {
-                return this._dateAndTime;
+                return this._date;
             }
 
             set
             {
-                this._dateAndTime = value;
-                RaisePropertyChanged("DateAndTime");
+                this._date = value;
+                RaisePropertyChanged("Date");
             }
         }
 
-        public PropPost(string author, string title, string dateandtime = "")
+
+        // Public accessor of ModifiedDate property and raises a propertychanged notification.
+        public string ModifiedDate
         {
-            this.Author = author;
-            this.Title = title;
-            this.DateAndTime = dateandtime;
+            get
+            {
+                return this._modifiedDate;
+            }
+
+            set
+            {
+                this._modifiedDate = value;
+                RaisePropertyChanged("ModifiedDate");
+            }
         }
 
+
+        // Public constructor to set a few variables and properties.
+        public PropPost()
+        {
+        }
+
+
+        // Public event property.
         public event PropertyChangedEventHandler PropertyChanged;
 
+
+        // Protected void to raise a change notification in the application.
         protected void RaisePropertyChanged(string name)
         {
             if (PropertyChanged != null)

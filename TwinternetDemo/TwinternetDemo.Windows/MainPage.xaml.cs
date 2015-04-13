@@ -70,7 +70,13 @@ namespace TwinternetDemo
                 Debug.WriteLine("MainPage:TestEvent_Click - Count Object List: " + handler.GetObjectList().Count);
 
                 foreach (Post post in handler.GetObjectList())
-                    Items.Add(new PropPost(post.Title, post.Author.FirstName + " " + post.Author.LastName));
+                    Items.Add(new PropPost()
+                        {
+                            Title = post.Title,
+                            Author = post.Author.FirstName + " " + post.Author.LastName,
+                            Date = post.Date,
+                            ModifiedDate = post.ModifiedDate
+                        });
 
 
                 Debug.WriteLine("MainPage:TestEvent_Click - Count Collection: " + Items.Count);
