@@ -68,9 +68,10 @@
 
                         <GridView.ItemTemplate>
                             <DataTemplate>
-                                <Grid HorizontalAlignment="Left" Width="250" Height="250" Background="Red">
+                                <Grid HorizontalAlignment="Left" Width="250" Height="250">
                                     <StackPanel>
                                         <TextBlock Text="{Binding Title}" />
+                                        <TextBlock Text="{Binding Date}" />
                                         <TextBlock Text="{Binding Author}" />
                                     </StackPanel>
                                 </Grid>

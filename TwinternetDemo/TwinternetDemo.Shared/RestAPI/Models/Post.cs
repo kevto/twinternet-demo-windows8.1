@@ -23,6 +23,12 @@ namespace TwinternetDemo.RestAPI.Models
         [DataMember(Name = "content")]
         public string Content;
 
+        [DataMember(Name = "date")]
+        public string Date;
+
+        [DataMember(Name = "modified")]
+        public string ModifiedDate;
+
         public Post() { }
     }
 }
