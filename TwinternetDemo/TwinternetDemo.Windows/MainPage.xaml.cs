@@ -35,8 +35,11 @@ namespace TwinternetDemo
         public MainPage()
         {
             Items = new ObservableCollection<PropPost>();
+
             this.InitializeComponent();
             this.Loaded += MainPage_Loaded;
+
+            // OneWay databinding.
             HubsectionPosts.DataContext = Items;
         }
 
