@@ -41,13 +41,16 @@ namespace TwinternetDemo
 
             // OneWay databinding.
             HubsectionPosts.DataContext = Items;
+            this.DataContext = demo;      
         }
+
+        public DemoProp demo = new DemoProp();
 
 
         // Method that executes once the mainpage has been completely loaded successfully.
         void MainPage_Loaded(object sender, RoutedEventArgs e)
         {
-            GetPosts();
+            this.demo.Demo = "Ok";
         }
 
 
@@ -55,6 +58,7 @@ namespace TwinternetDemo
         private void TestEvent_Click(object sender, RoutedEventArgs e)
         {
             GetPosts();
+            this.demo.Demo = "Niet ok";
         }
 
 

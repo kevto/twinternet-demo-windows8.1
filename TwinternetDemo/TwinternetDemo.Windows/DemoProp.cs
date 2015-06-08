@@ -8,7 +8,7 @@ namespace TwinternetDemo
     public class DemoProp : INotifyPropertyChanged 
     {
         private string _demo;
-        private int _count;
+        private int _count = 0;
 
         public string Demo
         {
@@ -19,7 +19,8 @@ namespace TwinternetDemo
 
             set
             {
-                this._demo = value;
+                _count++;
+                this._demo = "Times changed: " + value;
                 RaisePropertyChanged("Demo");
             }
         }

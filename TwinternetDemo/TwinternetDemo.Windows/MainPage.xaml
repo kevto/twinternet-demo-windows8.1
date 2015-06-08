@@ -50,7 +50,7 @@
     
 
 	<Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}" ScrollViewer.HorizontalScrollMode="Enabled">
-		<Hub Header="Header">
+		<Hub Header="{Binding Demo}">
 			<HubSection Width="Auto" Header="First" Background="{ThemeResource BackgroundTwinternetColorBlue}" ContentTemplate="{StaticResource DemoData}" />
 
 			<HubSection Width="800" Header="Second" Style="{ThemeResource BlackOnWhiteHubSection}"  ContentTemplate="{StaticResource DemoData}" />
